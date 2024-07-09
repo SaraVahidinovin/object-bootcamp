@@ -24,3 +24,48 @@ let books = [
         numPages: '180'   
     }
 ];
+
+
+//3:
+function findBookByTitle(booksArray, searchTitle) {
+    const book = booksArray.find(book => book.title === searchTitle);
+    return book || null;
+}
+
+let searchTitle = "The Great Gatsby";
+let result = findBookByTitle(books, searchTitle);
+console.log(result);
+
+//4:
+
+function stringToObject(str){
+    let object = {};
+
+    for (let char of str) {
+        if (object[char]) {
+            object[char]++;
+        } else {
+            object[char] = 1;
+        }
+    }
+    
+    return object;
+}
+
+console.log(stringToObject("Sara Vahidinovin"));
+
+//5:filterByCountry
+
+function filterByCountry(userlist, countryCode) {
+    let filteredUsers= [];
+
+    userlist.forEach(user => {
+        if (countryCode === user.nat){
+            filteredUsers.push(user);
+        }
+    });
+
+    return filteredUsers;
+}
+
+console.log(filterByCountry(users, 'AU'));
