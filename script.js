@@ -69,3 +69,14 @@ function filterByCountry(userlist, countryCode) {
 }
 
 console.log(filterByCountry(users, 'AU'));
+
+//6:listEmails
+function getEmailList(userlist){
+    let listOfEmails = [];
+
+    userlist.forEach(user => listOfEmails.push(user.email));
+
+    return listOfEmails;
+}
+
+console.log(getEmailList(users));
