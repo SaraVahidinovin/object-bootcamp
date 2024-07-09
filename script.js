@@ -80,3 +80,21 @@ function getEmailList(userlist){
 }
 
 console.log(getEmailList(users));
+
+//7: 
+function getNewEmails(userlist) {
+    let newEmailList = [];
+
+    for (let user of userlist) {
+        
+        let lastName = user.name.last.toLowerCase();
+        let firstName = user.name.first.toLowerCase();
+        let nationality = user.nat.toLowerCase();
+        let email = `${lastName}.${firstName}@evilcorp.${nationality}`;
+        newEmailList.push(email);
+    }
+
+    return newEmailList;
+}
+
+console.log(getNewEmails(users));
